@@ -46,7 +46,7 @@
     .status { margin: 0.75rem 0; }
     a { color: #0759a5; text-underline-offset: 0.15em; }
     a:focus-visible { outline: 3px solid #1b6fc2; outline-offset: 3px; }
-    @media (max-width:  thirtyrem) {
+    @media (max-width: 30rem) {
       body { padding: 0.75rem; }
       section, .panel { padding: 1rem; }
       dl, .result-row { grid-template-columns: 1fr; gap: 0.15rem; }
@@ -125,7 +125,7 @@
       .then(function (client) {
         return client.patient.read().then(function (patient) {
           showPatient(patient);
-          return loadObservations(client, patient.id);
+          return loadObservations(client, client.patient.id);
         });
       })
       .catch(function (error) {
